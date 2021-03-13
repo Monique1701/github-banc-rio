@@ -42,6 +42,15 @@ public class AlunoEnsinoMedio implements IAluno{
 	
 	
 	
+
+
+
+
+
+
+	
+	
+	
 	public void ativarMatricula() {
 		this.statusDaMatricula = true;
 	}
@@ -60,36 +69,7 @@ public class AlunoEnsinoMedio implements IAluno{
 		this.alunos.add(aluno);
 	}
 	
-	
-	public class Date{
-		private int dia, mes, ano;
-		public Date(int d, int m, int a) {
-			if(dataValida(dia, mes)) {
-				dia = d;
-				mes= m;
-				ano = a;
-			}
-			else {
-				dia = 0;
-				mes = 0;
-				ano = 0;
-				
-			}
-		}
-	}
-	
-	
-	public boolean dataValida(int d, int m) {
-		if((d >= 1)&& (d <= 31)&& (m >= 1)&& (m <= 12)){
-			
-		
-		}
-		else {
-			return false;
-		}
-		return false;
-		
-	}
+
 
 
 
