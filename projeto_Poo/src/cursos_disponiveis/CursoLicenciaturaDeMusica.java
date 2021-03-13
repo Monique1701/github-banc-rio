@@ -6,19 +6,13 @@ public class CursoLicenciaturaDeMusica {
 	private String experienciaInstrumental;
 	private String instrumentoDePreferencia;
 	private boolean statusDeMatricula;
+	private double mensaildade;
 	
 	
 	
 	
 	
-	
-	
-	/**
-	 * @param classificacaVocal
-	 * @param experienciaInstrumental
-	 * @param instrumentoDePreferencia
-	 * @param statusDeMatricula
-	 */
+
 	public CursoLicenciaturaDeMusica(String classificacaVocal, String experienciaInstrumental,
 			String instrumentoDePreferencia, boolean statusDeMatricula) {
 		super();
@@ -26,22 +20,30 @@ public class CursoLicenciaturaDeMusica {
 		this.experienciaInstrumental = experienciaInstrumental;
 		this.instrumentoDePreferencia = instrumentoDePreferencia;
 		this.statusDeMatricula = statusDeMatricula;
+		this.mensalidade = 505.50;
 	}
 
 
 	@SuppressWarnings("unused")
 	private void solicitarPedidoDeMatricula(String experienciaInstrumental) {
 		if(experienciaInstrumental == "7.5") {
-			System.out.println("SolicitaÁ„o aprovada!");
+			System.out.println("Solicita√ß√£o aprovada!");
 		}
 		else {
-			System.out.println("SolicitaÁ„o indeferida!");
+			System.out.println("Solicita√ß√£o indeferida!");
+		}
+	}
+	
+		@SuppressWarnings("unused")
+	private void pagarMensalidade(boolean statusDeMatricula, double quantia) {
+		if(statusDeMatricula == true && quantia == 505.50) {
+			System.out.println("Mensalidade paga");
+		}
+		else {
+			System.out.println("Mensalidade n√£o paga! Verique se sua matricula est√° ativa e se voc√™ deu a quantia exata");
 		}
 	}
 	
 	
-	private void pagarMensalidade() {
-		
-	}
 
 }
