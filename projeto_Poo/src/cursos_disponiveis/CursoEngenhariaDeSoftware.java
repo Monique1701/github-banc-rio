@@ -6,7 +6,21 @@ public class CursoEngenhariaDeSoftware {
 	
 	private String areaDeInteresse;
 	private float mediaMatEM;
+	private boolean statusDeMatricula;
+	private double mensalidade;
 	
+	
+	
+	
+	
+	public CursoEngenhariaDeSoftware(String areaDeInteresse, float mediaMatEM,
+			double mensalidade) {
+		super();
+		this.areaDeInteresse = areaDeInteresse;
+		this.mediaMatEM = mediaMatEM;
+		this.statusDeMatricula = true;
+		this.mensalidade = 1005;
+	}
 	
 	
 	
@@ -15,10 +29,20 @@ public class CursoEngenhariaDeSoftware {
 	@SuppressWarnings("unused")
 	private void solicitarPedidoDeMatricula(float mediaMatEM ) {
 		if(mediaMatEM >= 7.5) {
-			System.out.println("Solicitação aprovada!");
+			System.out.println("SolicitaÃ§Ã£o aprovada!");
 		}
 		else {
-			System.out.println("Solicitação indeferida!");
+			System.out.println("SolicitaÃ§Ã£o indeferida!");
 		}
+	}
+	
+		private void pagarMensalidade(boolean statusDeMatricula, double quantia) {
+		if(statusDeMatricula == true && quantia == 1005) {
+			System.out.println("Mensalidade paga");
+		}
+		else {
+			System.out.println("Mensalidade nÃ£o paga! Verique se sua matricula estÃ¡ ativa e se vocÃª deu a quantia exata");
+		}
+		
 	}
 }
