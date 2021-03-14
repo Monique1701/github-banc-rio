@@ -1,49 +1,56 @@
 package cursos_disponiveis;
 
-public class CursoLicenciaturaDeMusica {
+import sistema_maricula_exececao.MensalidadeNaoRealizadaException;
+
+import sistema_maricula_exececao.SolicitacaoIndeferidaException;
+
+public class CursoLicenciaturaDeMusica implements ICurso{
 
 	private String classificacaVocal;
 	private String experienciaInstrumental;
 	private String instrumentoDePreferencia;
 	private boolean statusDeMatricula;
-	private double mensaildade;
-	
-	
+	private double mensalidade;
 	
 	
 	
 
 	public CursoLicenciaturaDeMusica(String classificacaVocal, String experienciaInstrumental,
-			String instrumentoDePreferencia, boolean statusDeMatricula) {
+			String instrumentoDePreferencia) {
 		super();
 		this.classificacaVocal = classificacaVocal;
 		this.experienciaInstrumental = experienciaInstrumental;
 		this.instrumentoDePreferencia = instrumentoDePreferencia;
-		this.statusDeMatricula = statusDeMatricula;
-		this.mensalidade = 505.50;
+		this.statusDeMatricula = true;
+		this.mensalidade =  505.50;
+		
 	}
 
 
-	@SuppressWarnings("unused")
-	private void solicitarPedidoDeMatricula(String experienciaInstrumental) {
-		if(experienciaInstrumental == "7.5") {
-			System.out.println("SolicitaÃ§Ã£o aprovada!");
-		}
-		else {
-			System.out.println("SolicitaÃ§Ã£o indeferida!");
-		}
-	}
 	
-		@SuppressWarnings("unused")
-	private void pagarMensalidade(boolean statusDeMatricula, double quantia) {
+
+	public void pagarMensalidade(boolean statusDeMatricula, double quantia) throws MensalidadeNaoRealizadaException{
 		if(statusDeMatricula == true && quantia == 505.50) {
-			System.out.println("Mensalidade paga");
+			System.out.println("Mensalidade realizada com sucesso");
 		}
 		else {
-			System.out.println("Mensalidade nÃ£o paga! Verique se sua matricula estÃ¡ ativa e se vocÃª deu a quantia exata");
+			throw new MensalidadeNaoRealizadaException("Mensalidade não realizada! Verique se sua matricula está ativa e se você deu a quantia exata");
 		}
 	}
-	
-	
+
+
+	@Override
+	public void solicitarPedidoDeMatricula(float mediaMatEM) throws SolicitacaoIndeferidaException{
+		// TODO Auto-generated method stub
+		if(experienciaInstrumental == "7.5") {
+			System.out.println("Solicitação aprovada!");
+		}
+		else {
+			throw new SolicitacaoIndeferidaException("Solicitação indeferida!");
+		}
+	}
+
+
+
 
 }

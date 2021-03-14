@@ -1,6 +1,5 @@
 package sistema_matricula;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +11,7 @@ public class AlunoEnsinoMedio implements IAluno{
 	
 	private String nomeCompleto;
 	private String nomeRespondavel;
-	private Date dataNascimento;
+	private String dataNascimento;
 	private String cpf;
 	private String cpfResponsavel;
 	private int idade;
@@ -24,7 +23,7 @@ public class AlunoEnsinoMedio implements IAluno{
 	
 	private List<IAluno> alunos = new ArrayList<IAluno>();
 	
-	public AlunoEnsinoMedio(String nomeCompleto, String nomeResponsavel, String cpf, String cpfResponsavel, int idade, String turno, int serie,
+	public AlunoEnsinoMedio(String nomeCompleto, String nomeResponsavel, String dataNascimentp,String cpf, String cpfResponsavel, int idade, String turno, int serie,
 			String endereco) {
 		super();
 		this.nomeRespondavel = nomeResponsavel;
@@ -36,21 +35,26 @@ public class AlunoEnsinoMedio implements IAluno{
 		this.serie = serie;
 		this.endereco = endereco;
 		this.statusDaMatricula = true;
+		this.dataNascimento = dataNascimento;
 	}
 	
 	
 	
+
+
+
+
+
+	@Override
+	public void localizarPorMatricula(IAluno matriculAluno) {
+		// TODO Auto-generated method stub
+		
+	}
 	
-	
 
 
 
 
-
-
-	
-	
-	
 	public void ativarMatricula() {
 		this.statusDaMatricula = true;
 	}
@@ -68,7 +72,17 @@ public class AlunoEnsinoMedio implements IAluno{
 		// TODO Auto-generated method stub
 		this.alunos.add(aluno);
 	}
-	
+
+
+
+
+
+
+
+
+
+
+
 
 
 
